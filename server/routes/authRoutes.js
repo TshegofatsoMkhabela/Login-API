@@ -13,13 +13,21 @@ const {
 // Allow requests only from this origin (frontend URL)
 const allowedOrigin = [
   "http://localhost:5173",
-  "https://tshegofatsomkhabela-login-api.vercel.app/",
+  "https://tshegofatsomkhabela-login-api.vercel.app",
 ];
 
 router.use(
   cors({
     credentials: true,
-    origin: allowedOrigin,
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        callback(null, origin);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
   })
 );
 
