@@ -10,7 +10,7 @@ import { Toaster } from "react-hot-toast";
 import { UserContextProvider } from "./context/UserContext";
 
 axios.defaults.baseURL =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+  import.meta.env.VITE_API_BASE_URL || "https://login-api-g24e.onrender.com";
 axios.defaults.withCredentials = true;
 
 const App = () => {
