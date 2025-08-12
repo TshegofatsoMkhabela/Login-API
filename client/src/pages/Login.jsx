@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../context/userContext";
+import { UserContext } from "../context/UserContext";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -12,6 +12,7 @@ const Login = () => {
     password: "",
   });
 
+  // Login User
   const loginUser = async (event) => {
     event.preventDefault();
     const { email, password } = data;
