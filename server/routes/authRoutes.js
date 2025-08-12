@@ -13,7 +13,7 @@ const {
 // Allow requests only from this origin (frontend URL)
 const allowedOrigin = [
   "http://localhost:5173",
-  "https://tshegofatsomkhabela-login-api.vercel.app",
+  "https://tshegofatsomkhabela-login-api.vercel.app/",
 ];
 
 router.use(
